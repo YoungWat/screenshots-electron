@@ -1,0 +1,9 @@
+{
+  "name": "screenshots-electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private":false,
+  "repository": "https://github.com/YoungWat/screenshots-electron.git",
+  "author": "松鼠 <liuyang05@innotechx.com>",
+  "license": "MIT"
+}
