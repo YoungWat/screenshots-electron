@@ -1,8 +1,7 @@
 const renderer_utils = require("../utils/renderer_utils")
 
 class Renderer {
-  constructor() {
-    const $blockMaskOuter = document.getElementsByClassName("block-mask-outer")[0]
+  constructor(base64) {
     const $blockMaskList = document.getElementsByClassName("block-mask")
 
     const blockMaskArr = renderer_utils.transDomList2Arr($blockMaskList)
@@ -13,6 +12,20 @@ class Renderer {
       $right: blockMaskArr[3],
       $bottom: blockMaskArr[4]
     }
+    this.winInfo = {
+      width: document.documentElement.clientWidth,
+      height: document.documentElement.clientHeight
+    }
+
+    this.$blockMaskOuter = document.getElementsByClassName("block-mask-outer")[0]
+
+    this.$body = document.body
+    this.$body.style.backgroundImage = `url(${base64})`
+    // document.addEventListener("load", () => {
+    this.setBlockMask()
+    this.$body.style.opacity = 1
+    this.$body.style.cursor = "unset"
+    // })
   }
 
   setBlockMask() {
@@ -22,10 +35,11 @@ class Renderer {
       width: getStyle($center, "width"),
       height: getStyle($center, "height"),
       top: getStyle($center, "top"),
-      bottom: getStyle($center, "bottom"),
       left: getStyle($center, "left"),
-      right: getStyle($center, "right")
     }
+    centerInfo.right = this.winInfo.width - centerInfo.left - centerInfo.width
+    centerInfo.bottom = this.winInfo.height - centerInfo.top - centerInfo.height
+
 
     $top.style.height = centerInfo.top
 
@@ -38,6 +52,8 @@ class Renderer {
     $right.style.width = centerInfo.right
 
     $bottom.style.height = centerInfo.bottom
+
+    this.$blockMaskOuter.classList.remove("hide")
   }
 }
 

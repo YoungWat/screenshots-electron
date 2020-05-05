@@ -7,7 +7,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "renderer-e":"electron src/main/main.js"
+    "renderer-e":"electron src/main/index.js"
   },
   "private": false,
   "repository": "https://github.com/YoungWat/screenshots-electron.git",

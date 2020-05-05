@@ -1,6 +1,6 @@
 const { BrowserWindow, app, screen } = require("electron")
-const utils = require("../utils/main_utils.js")
-const { isWin } = require("../common/common.js")
+const utils = require("../utils/index.js")
+const { isWin } = require("../common/index.js")
 
 class Main {
   constructor() {
@@ -28,12 +28,12 @@ class Main {
       })
 
       // debug
-      // win.setAlwaysOnTop(true, "screen-saver")
+      win.setAlwaysOnTop(true, "screen-saver")
 
       win.loadURL(`file://${utils.getPathFromSrc("renderer/index.html")}`)
-      win.webContents.openDevTools({
-        mode: "detach"
-      })
+      // win.webContents.openDevTools({
+      //   mode: "detach"
+      // })
     })
   }
 }
