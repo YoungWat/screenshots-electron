@@ -1,9 +1,19 @@
 {
   "name": "screenshots-electron",
   "version": "1.0.0",
+  "keywords": [
+    "electron",
+    "screenshots"
+  ],
   "main": "index.js",
-  "private":false,
+  "scripts": {
+    "renderer-e":"electron src/main/main.js"
+  },
+  "private": false,
   "repository": "https://github.com/YoungWat/screenshots-electron.git",
   "author": "松鼠 <liuyang05@innotechx.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^8.2.5"
+  }
 }
