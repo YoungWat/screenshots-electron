@@ -5,7 +5,7 @@
     "electron",
     "screenshots"
   ],
-  "main": "index.js",
+  "main": "src/main/index.js",
   "scripts": {
     "renderer-e": "electron src/main/index.js",
     "build": "electron-builder"
