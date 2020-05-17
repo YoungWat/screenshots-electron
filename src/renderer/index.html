@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <style>
+    .hide {
+      display: none;
+    }
+
+    body,
+    html,
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      /* debug */
+      cursor: none;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: center center / 100% no-repeat;
+    }
+
+    .block-mask-outer {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      /* background: black; */
+    }
+
+    .block-mask {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .block-mask-top {
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    .block-mask-left {
+      left: 0;
+    }
+
+    .block-mask-center {
+      top: 400px;
+      left: 460px;
+      width: 500px;
+      height: 300px;
+
+      background: transparent;
+    }
+
+    .block-mask-right {
+      right: 0;
+    }
+
+    .block-mask-bottom {
+      width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+
+    #canvas,
+    #video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="block-mask-outer hide">
+    <div class="block-mask-top block-mask"></div>
+    <div class="block-mask-left block-mask"></div>
+    <div class="block-mask-center block-mask"></div>
+    <div class="block-mask-right block-mask"></div>
+    <div class="block-mask-bottom block-mask"></div>
+  </div>
+  <video id="video" class="hide"></video>
+  <canvas id="canvas" class="hide"></canvas>
+  <script src="./index.js"></script>
+</body>
+
+</html>
