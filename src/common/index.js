@@ -1,4 +1,4 @@
 module.exports = {
   isMac: process.platform === "darwin",
-  isWin: process.platform === "win32"
+  isWin: process.platform === "win32",
 }

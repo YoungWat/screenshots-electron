@@ -1,4 +1,4 @@
-const renderer_utils = require("../utils/renderer_utils")
+const renderer_utils = require("../../../utils/renderer_utils")
 
 class Renderer {
   constructor(base64) {
@@ -50,7 +50,7 @@ class Renderer {
     $right.style.top = centerInfo.top
     $right.style.height = centerInfo.height
     $right.style.width = centerInfo.right
-
+    
     $bottom.style.height = centerInfo.bottom
 
     this.$blockMaskOuter.classList.remove("hide")

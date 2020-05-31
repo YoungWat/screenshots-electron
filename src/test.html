@@ -1,0 +1,15 @@
+<html>
+<button id="capture">capture</button>
+<script>
+  const screenshotsElectron = require("electron").remote.require("./lib/electron-screenshots/main/index")
+  const utils = require("./utils/index")
+  screenshotsElectron.register((base64) => {
+    utils.log("base64 ", base64)
+  })
+  document.getElementById("capture").addEventListener("click", () => {
+    console.log("capture")
+    screenshotsElectron.capture()
+  })
+</script>
+
+</html>

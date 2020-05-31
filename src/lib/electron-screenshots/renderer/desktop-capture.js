@@ -1,5 +1,5 @@
 const { desktopCapturer } = require("electron")
-const config = require("../config")
+const config = require("../../../config")
 
 const clientInfo = {
   width: document.documentElement.clientWidth,
@@ -7,6 +7,7 @@ const clientInfo = {
 }
 module.exports = {
   capture(cb) {
+    console.log("capture in")
     // todo write in config
     const rate = config.desktopCaptureScaleRate
     desktopCapturer.getSources({ types: ["screen"] }).then((sources) => {

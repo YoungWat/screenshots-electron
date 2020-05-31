@@ -1,10 +1,6 @@
-const path = require("path")
-
 module.exports = {
-  getPathFromRoot(str) {
-    return path.resolve(__dirname, "../../", str)
-  },
-  getPathFromSrc(str) {
-    return path.resolve(__dirname, "../", str)
+  log(...args) {
+    const preStr = "screenshotsElectron===> "
+    console.log(preStr, ...args)
   }
 }
