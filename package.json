@@ -15,6 +15,6 @@
   "author": "松鼠 <liuyang05@innotechx.com>",
   "license": "MIT",
   "dependencies": {
-    "electron": "^8.2.5"
+    "electron": "^8.5.1"
   }
 }
